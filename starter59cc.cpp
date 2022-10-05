@@ -166,15 +166,14 @@
 //                 n--;
 //             }
 //             k++;
-                  
+
 //         }
 
 //         cout<<T<<endl;
-        
+
 //     }
 // return 0;
 // }
-
 
 // #include <bits/stdc++.h>
 // using namespace std;
@@ -195,7 +194,6 @@
 //         cin >> n;
 
 //         vector<ll> v(n);
-        
 
 //         for (ll i = 0; i < n; i++)
 //         {
@@ -212,7 +210,6 @@
 //                 break;
 //             }
 //         }
-             
 
 //         if (maxi == v[0])
 //         {
@@ -242,7 +239,6 @@
 // #include<bits/stdc++.h>
 // using namespace std;
 // #define ll long long int
-
 
 // int main(){
 // ios_base::sync_with_stdio(false);
@@ -317,16 +313,23 @@ int main()
         cin >> n;
 
         vector<ll> v(n);
-        
 
         for (ll i = 0; i < n; i++)
         {
             cin >> v[i];
         }
-        
 
-        ll maxi = *max_element(v.begin(),v.end());
-             
+        int maxi = v[0];
+        int maxi_i = 0;
+        
+        for (int i = 1; i < n; i++)
+        {
+            if(v[i]>maxi){
+                maxi = v[i];
+                maxi_i = i;
+                break;
+            }
+        }
 
         if (maxi == v[0])
         {
@@ -335,15 +338,16 @@ int main()
 
         else
         {
-            ll max2_Index = upper_bound(v.begin(), v.end(), v[0]) - v.begin() + 1;
-            cout << n - (max2_Index - 1) << endl;
-            for (ll i = 0; i < max2_Index - 1; i++)
+            // ll max2_Index = upper_bound(v.begin(), v.end(), v[0]) - v.begin() + 1;
+
+            cout << maxi_i<< endl;
+            for (ll i = 0; i < maxi_i; i++)
             {
                 cout << v[i] << " ";
             }
             cout << endl;
-            cout << v.size() - max2_Index + 1 << endl;
-            for (ll j = max2_Index - 1; j < v.size(); j++)
+            cout << v.size() - maxi_i << endl;
+            for (ll j = maxi_i ; j < v.size(); j++)
             {
                 cout << v[j] << " ";
             }
