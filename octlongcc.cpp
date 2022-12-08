@@ -171,3 +171,55 @@
 //     }
 //     return 0;
 // }
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int count(string s){
+
+   int ca=0,cb=0,cab=0,cba=0;
+   for(int i = 0;i<s.length();i++){
+     if(s[i]=='a'){
+        ca++;
+        if(s[i] == 'a' && s[i+1] == 'b'){
+           cab++;
+        }
+     }
+
+     else{
+        cb++;
+        if(s[i]=='b' && s[i+1] == 'a'){
+            cba++;
+        }
+     }
+   }
+   
+   int result = ca+cb+cab+cba;
+   return result;
+}
+
+int main()
+{
+ios_base::sync_with_stdio(false);
+cin.tie(NULL);
+cout.tie(NULL);
+ 
+#ifndef ONLINE_JUDGE
+freopen("input.txt","r",stdin);
+freopen("output.txt","w",stdout);
+#endif
+ 
+    int t;
+    cin>>t;
+
+    while(t--){
+
+        string s;
+        cin>>s;
+
+        int l = count(s);
+        cout<<l-1<<endl;
+    }
+    return 0;
+}
+
