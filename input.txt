@@ -1,9 +1,7 @@
-4
 3
-aaa
+2
+0 1
+2
+1 0
 3
-abc
-5
-bcaca
-6
-caabaa
+2 1 0
